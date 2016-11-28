@@ -47,6 +47,30 @@ around BUILDARGS => sub {
     return $class->$orig(@args);
 };
 
+=method execute
+
+Send the request off to the ruder server and return the response. By
+default, this method will simple return the content of the
+response.
+
+If you want the entire HTTP::Response object, pass C<debug => 1> to
+the method to do so.
+
+For example, if the actual request were to respond with the following
+C<HTTP::Response>
+
+    my $server_res = HTTP::Response->new(200, undef, undef, 'response');
+
+Then ruder would behave like such:
+
+    my $ruder_res = $ruder->execute;
+    is($ruder_res, 'response'); // ok
+
+    my $ruder_res_debug = $ruder->execute(debug => 1);
+    is($ruder_res_debug, $server_res); // ok
+
+=cut
+
 sub execute {
     my ($self, %args) = @_;
 
