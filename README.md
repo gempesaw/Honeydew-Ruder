@@ -2,7 +2,7 @@
 
 Honeydew::Ruder - Talk to the Ruder nodeJS service
 
-[![Build Status](https://travis-ci.org/gempesaw/Honeydew-Ruder.svg?branch=master)](https://travis-ci.org/gempesaw/Honeydew-Ruder)
+[![Build Status](https://travis-ci.org/honeydew-sc/Honeydew-Ruder.svg?branch=master)](https://travis-ci.org/honeydew-sc/Honeydew-Ruder)
 
 # VERSION
 

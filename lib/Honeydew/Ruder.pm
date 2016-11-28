@@ -7,7 +7,7 @@ use Moo;
 use Honeydew::Config;
 use LWP::UserAgent;
 
-=for markdown [![Build Status](https://travis-ci.org/gempesaw/Honeydew-Ruder.svg?branch=master)](https://travis-ci.org/gempesaw/Honeydew-Ruder)
+=for markdown [![Build Status](https://travis-ci.org/honeydew-sc/Honeydew-Ruder.svg?branch=master)](https://travis-ci.org/honeydew-sc/Honeydew-Ruder)
 
 =head1 SYNOPSIS
 
