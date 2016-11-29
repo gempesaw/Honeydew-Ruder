@@ -1,4 +1,5 @@
 requires "Honeydew::Config" => "0";
+requires "JSON" => "0";
 requires "LWP::UserAgent" => "0";
 requires "Moo" => "0";
 requires "strict" => "0";

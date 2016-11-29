@@ -21,11 +21,17 @@ describe 'Ruder' => sub {
     };
 
     describe 'execution' => sub {
-        my ($ua_mock);
+        my ($ua_mock, $expected);
         before each => sub {
+            $expected = HTTP::Request->new(
+                'POST', 'localhost',
+                [ 'Content-Type', 'application/json' ],
+
+                '{"data":"GET https://www.google.com"}'
+            );
             $ua_mock = mock();
-            $ua_mock->expects('post')
-              ->with_deep('localhost', data => $req)
+            $ua_mock->expects('request')
+              ->with_deep($expected)
               ->returns(HTTP::Response->new(200, undef, undef, 'response'));
         };
 

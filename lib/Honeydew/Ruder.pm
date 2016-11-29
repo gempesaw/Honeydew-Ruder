@@ -3,9 +3,10 @@ package Honeydew::Ruder;
 # ABSTRACT: Talk to the Ruder nodeJS service
 use strict;
 use warnings;
-use Moo;
 use Honeydew::Config;
 use LWP::UserAgent;
+use JSON;
+use Moo;
 
 =for markdown [![Build Status](https://travis-ci.org/honeydew-sc/Honeydew-Ruder.svg?branch=master)](https://travis-ci.org/honeydew-sc/Honeydew-Ruder)
 
@@ -74,11 +75,13 @@ Then ruder would behave like such:
 sub execute {
     my ($self, %args) = @_;
 
-    my $response = $self->ua->post(
-        $self->_ruder_addr,
-        data => $self->request
-    );
+    my $req = HTTP::Request->new;
+    $req->method('POST');
+    $req->uri($self->_ruder_addr);
+    $req->header('Content-Type' => 'application/json');
+    $req->content(to_json({ data => $self->request}));
 
+    my $response = $self->ua->request($req);
     if ($args{debug}) {
         return $response;
     }
