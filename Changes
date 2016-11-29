@@ -1,4 +1,4 @@
 Revision history for perl module Honeydew-Ruder
 
 {{$NEXT}}
- -
+ - Initial release for perl client to ruder microservice
