@@ -6,7 +6,7 @@ Honeydew::Ruder - Talk to the Ruder nodeJS service
 
 # VERSION
 
-version 0.01
+version 0.02
 
 # SYNOPSIS
 
@@ -28,11 +28,11 @@ Send the request off to the ruder server and return the response. By
 default, this method will simple return the content of the
 response.
 
-If you want the entire HTTP::Response object, pass `debug =` 1> to
-the method to do so.
+If you want the entire HTTP::Response object, pass `debug => 1`
+to the method to do so.
 
 For example, if the actual request were to respond with the following
-`HTTP::Response`
+hypothetical `HTTP::Response`
 
     my $server_res = HTTP::Response->new(200, undef, undef, 'response');
 

@@ -54,11 +54,11 @@ Send the request off to the ruder server and return the response. By
 default, this method will simple return the content of the
 response.
 
-If you want the entire HTTP::Response object, pass C<debug => 1> to
-the method to do so.
+If you want the entire HTTP::Response object, pass C<< debug => 1 >>
+to the method to do so.
 
 For example, if the actual request were to respond with the following
-C<HTTP::Response>
+hypothetical C<HTTP::Response>
 
     my $server_res = HTTP::Response->new(200, undef, undef, 'response');
 
